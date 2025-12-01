@@ -36,16 +36,8 @@ body {
     position: relative;
 }
 
-.greeting .name::after {
-    content: '';
-    position: absolute;
-    right: -8px;
-    top: 50%;
-    transform: translateY(-50%);
-    width: 6px;
-    height: 6px;
-    background-color: #4285f4;
-    border-radius: 50%;
+.greeting .blue-period {
+    color: #4285f4;
 }
 
 .description {
@@ -81,8 +73,16 @@ body {
 }
 
 /* 회사 */
-.company {
+.company-wrapper {
+    display: flex;
+    gap: 60px;
     margin-bottom: 60px;
+    align-items: flex-start;
+}
+
+.company-info {
+    flex: 0 0 200px;
+    min-width: 200px;
 }
 
 .company-name {
@@ -107,23 +107,27 @@ body {
 
 .role-period {
     font-size: 16px;
-    margin-bottom: 24px;
     color: #666;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
 }
 
 .role {
     font-weight: 600;
-    margin-right: 12px;
 }
 
 .period {
     color: #888;
 }
 
+.company-projects {
+    flex: 1;
+}
+
 /* 프로젝트 */
 .project {
     margin-bottom: 40px;
-    margin-left: 20px;
 }
 
 .project-name {
@@ -295,8 +299,14 @@ body {
         font-size: 18px;
     }
 
-    .project {
-        margin-left: 0;
+    .company-wrapper {
+        flex-direction: column;
+        gap: 24px;
+    }
+
+    .company-info {
+        flex: 1;
+        min-width: auto;
     }
 
     .detail-content,
