@@ -402,22 +402,22 @@ body {
 /* 반응형 디자인 */
 @media (max-width: 768px) {
     .container {
-        padding: 40px 24px;
+        padding: 32px 20px;
     }
 
     .greeting {
-        font-size: 40px;
+        font-size: 32px;
     }
 
     .section-title {
-        font-size: 32px;
+        font-size: 26px;
     }
 
     .company-name,
     .project-name,
     .experience-name,
     .skill-category-title {
-        font-size: 20px;
+        font-size: 18px;
     }
 
     .company-wrapper {
@@ -430,9 +430,48 @@ body {
         min-width: auto;
     }
 
+    .description {
+        font-size: 16px;
+        line-height: 1.7;
+    }
+
+    .role-period,
+    .project-period {
+        font-size: 14px;
+    }
+
+    .detail-title {
+        font-size: 16px;
+    }
+
     .detail-content,
     .experience-description {
+        font-size: 16px;
+        line-height: 1.7;
         margin-left: 0;
+    }
+
+    .detail-list,
+    .skill-list {
+        font-size: 16px;
+        line-height: 1.7;
+    }
+
+    /* Other Experiences 본문은 모바일에서 불릿 제거 */
+    .experience-description {
+        font-size: 16px;
+        line-height: 1.7;
+        list-style: none;
+        margin-left: 0;
+        padding-left: 0;
+    }
+
+    .experience-description li::marker {
+        content: '';
+    }
+
+    .contact-list a {
+        font-size: 16px;
     }
 }
 
