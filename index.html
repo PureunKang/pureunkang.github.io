@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>이력서</title>
+    <title>이력서 - 강푸른</title>
     <link rel="stylesheet" href="styles.css" />
     <link rel="preconnect" href="https://cdn.jsdelivr.net" />
     <link
@@ -12,6 +12,7 @@
     />
   </head>
   <body>
+    <div class="scroll-progress"></div>
     <div class="container">
       <!-- 인사말 및 소개 -->
       <section class="intro">
@@ -23,7 +24,7 @@
         </h1>
         <p class="description">
           프로젝트에 필요하다면 적극적으로 학습하여 최적의 결과를 낼 수 있도록
-          노력하며, 새로운 기술에 대한 두려움을 극복하고자 노력합니다.
+          노력하며, 새로운 기술에 대한 두려움을 극복하고자 합니다.
         </p>
         <br />
         <p class="description">
@@ -97,7 +98,7 @@
 
             <div class="project">
               <h4 class="project-name">
-                두산전자SMS EHS Management IT System 유지보수
+                두산전자 EHS Management IT System 유지보수
               </h4>
               <div class="project-period">2025.10</div>
 
@@ -132,7 +133,13 @@
 
             <div class="project">
               <h4 class="project-name">
-                Safelix – 제조업 안전관리 자체 솔루션 개발
+                <a
+                  href="https://ehs.safelix.co.kr:21002/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="project-title-link"
+                  >Safelix – 제조업 안전관리 자체 솔루션 개발</a
+                >
               </h4>
               <div class="project-period">2025.07 - 2025.10</div>
 
@@ -192,9 +199,38 @@
             <span class="role">프론트엔드 국비캠프 교육 이수</span>
             <span class="period">2024.12. - 2025.05</span>
           </div>
-          <p class="experience-description">
-            [경험에 대한 설명을 작성해주세요.]
-          </p>
+          <ul class="experience-description">
+            <li>React, Next.js을 익혔습니다.</li>
+            <li>
+              상태의 위치·렌더링 영향을 고민하며 상태관리 도구(Context API,
+              Redux toolkit, Zustand, React Query)를 적절히 사용하기 위해
+              고민했습니다.
+            </li>
+            <li>
+              styled-components, TailwindCSS, shadcn/ui를 활용해 디자이너와의
+              협업을 원활히 진행했습니다.
+            </li>
+            <li>
+              <span class="project-links"
+                >최종과제 :
+                <a
+                  href="https://github.com/RE6CT/jeju-olleyo"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="project-link github-link"
+                  >GitHub</a
+                >
+                <span class="link-divider">|</span>
+                <a
+                  href="https://jeju-olleyo.vercel.app/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="project-link deploy-link"
+                  >배포링크</a
+                >
+              </span>
+            </li>
+          </ul>
         </div>
 
         <div class="experience">
@@ -205,9 +241,13 @@
             >
             <span class="period">2024.04. - 2024.10</span>
           </div>
-          <p class="experience-description">
-            [경험에 대한 설명을 작성해주세요.]
-          </p>
+          <ul class="experience-description">
+            <li>Python 기초 문법을 기반으로 알고리즘 문제를 해결합니다.</li>
+            <li>
+              HTML/CSS를 두 달간 학습하며 레이아웃, 시맨틱 구조 등과 같은 기본
+              요소들을 익혔습니다.
+            </li>
+          </ul>
         </div>
 
         <div class="experience">
@@ -216,9 +256,12 @@
             <span class="role">총 근무 : 6년 11개월 | 근무지역 : 서울</span>
             <span class="period">2017.11. - 2024.12</span>
           </div>
-          <p class="experience-description">
-            [경험에 대한 설명을 작성해주세요.]
-          </p>
+          <ul class="experience-description">
+            <li>
+              국내외 고객사와 협력하여 제품 수입, 판매 및 서비스 제공을
+              수행했습니다.
+            </li>
+          </ul>
         </div>
 
         <section class="section">
@@ -246,7 +289,9 @@
                     <span class="role">[역할]</span>
                     <span class="period">[시작일]. [월]. - [종료일 또는 현재]</span>
                 </div>
-                <p class="experience-description">[경험에 대한 설명을 작성해주세요.]</p>
+                <ul class="experience-description">
+                  <li>[경험에 대한 설명을 작성해주세요.]</li>
+                </ul>
             </div>
             -->
       </section>
@@ -286,15 +331,39 @@
         <div class="skill-category">
           <h3 class="skill-category-title">JavaScript</h3>
           <ul class="skill-list">
-            <li>JavaScript, TypeScript</li>
+            <li>
+              JavaScript, TypeScript를 프로젝트 전반에서 사용하며, 필요한 기능을
+              구현할 수 있는 수준의 실전 경험을 갖추고 있습니다.
+            </li>
           </ul>
         </div>
 
         <div class="skill-category">
           <h3 class="skill-category-title">React</h3>
           <ul class="skill-list">
-            <li>[React 관련 스킬 1]</li>
+            <li>
+              기본 훅을 상황에 맞게 사용하고, 컴포넌트의 성격을 이해하고 적절한
+              props를 전달하는 것에 주안점을 둡니다.
+            </li>
             <li>페이지별로 적절한 렌더링 전략을 선택할 수 있습니다.</li>
+          </ul>
+        </div>
+
+        <div class="skill-category">
+          <h3 class="skill-category-title">Backend</h3>
+          <ul class="skill-list">
+            <li>
+              인턴 기간 동안 Spring Boot 환경에서 CRUD 요청–응답 흐름을 직접
+              연결해보며 필요한 API를 만들어 사용하였습니다.
+            </li>
+            <li>
+              현재는 프로젝트 세팅이 갖춰진 상태라면 Spring Boot, Java,
+              MyBatis를 이용해 필요한 기능을 구현 할 수 있습니다.
+            </li>
+            <li>
+              새로운 프로젝트를 직접 세팅하고, Docker 기반으로 배포 환경을
+              구성하는 것을 목표로 학습 중입니다.
+            </li>
           </ul>
         </div>
 
@@ -311,24 +380,43 @@
       <section class="section">
         <h2 class="section-title">Contact</h2>
         <ul class="contact-list">
-          <li><a href="mailto:[이메일주소]">이메일</a></li>
+          <li><a href="mailto:pureun0000@gmail.com">이메일</a></li>
           <li>
-            <a href="[블로그URL]" target="_blank" rel="noopener noreferrer"
+            <a
+              href="https://pureun1.tistory.com/"
+              target="_blank"
+              rel="noopener noreferrer"
               >블로그</a
             >
           </li>
           <li>
-            <a href="[링크드인URL]" target="_blank" rel="noopener noreferrer"
-              >링크드인</a
-            >
-          </li>
-          <li>
-            <a href="[깃허브URL]" target="_blank" rel="noopener noreferrer"
+            <a
+              href="https://github.com/PureunKang"
+              target="_blank"
+              rel="noopener noreferrer"
               >깃허브</a
             >
           </li>
         </ul>
       </section>
     </div>
+    <script>
+      const scrollProgress = document.querySelector(".scroll-progress");
+
+      function updateScrollProgress() {
+        const windowHeight = window.innerHeight;
+        const documentHeight = document.documentElement.scrollHeight;
+        const scrollTop =
+          window.pageYOffset || document.documentElement.scrollTop;
+        const scrollableHeight = documentHeight - windowHeight;
+        const progress = (scrollTop / scrollableHeight) * 100;
+
+        scrollProgress.style.width = progress + "%";
+      }
+
+      window.addEventListener("scroll", updateScrollProgress);
+      window.addEventListener("resize", updateScrollProgress);
+      updateScrollProgress();
+    </script>
   </body>
 </html>

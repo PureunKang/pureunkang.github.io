@@ -4,6 +4,16 @@
     box-sizing: border-box;
 }
 
+html {
+    overflow-y: scroll;
+    scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: none; /* IE and Edge */
+}
+
+html::-webkit-scrollbar {
+    display: none; /* Chrome, Safari, Opera */
+}
+
 body {
     font-family: "Pretendard Variable", Pretendard, -apple-system, BlinkMacSystemFont, system-ui, Roboto, "Helvetica Neue", "Segoe UI", "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", sans-serif;
     line-height: 1.6;
@@ -13,8 +23,19 @@ body {
     -moz-osx-font-smoothing: grayscale;
 }
 
+.scroll-progress {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 0%;
+    height: 3px;
+    background-color: #4285f4;
+    z-index: 1000;
+    transition: width 0.1s ease-out;
+}
+
 .container {
-    max-width: 900px;
+    max-width: 850px;
     margin: 0 auto;
     padding: 60px 40px;
 }
@@ -25,7 +46,7 @@ body {
 }
 
 .greeting {
-    font-size: 48px;
+    font-size: 52px;
     font-weight: 700;
     line-height: 1.3;
     margin-bottom: 24px;
@@ -41,9 +62,10 @@ body {
 }
 
 .description {
-    font-size: 18px;
+    font-size: 20px;
     line-height: 1.8;
-    color: #333;
+    color: #000;
+    font-weight: 400;
 }
 
 /* 섹션 */
@@ -52,7 +74,7 @@ body {
 }
 
 .section-title {
-    font-size: 32px;
+    font-size: 36px;
     font-weight: 700;
     margin-bottom: 40px;
     letter-spacing: -0.01em;
@@ -82,24 +104,26 @@ body {
 }
 
 .company-info {
-    flex: 0 0 200px;
-    min-width: 200px;
+    flex: 0 0 240px;
+    min-width: 240px;
 }
 
 .company-name {
-    font-size: 24px;
+    font-size: 28px;
     font-weight: 700;
     margin-bottom: 8px;
     position: relative;
     display: inline-block;
+    line-height: 1.4;
+    word-break: keep-all;
+    max-width: 100%;
 }
 
 .company-name::after {
     content: '';
     position: absolute;
     right: -8px;
-    top: auto;
-    bottom: 4px;
+    bottom: 0.15em;
     transform: none;
     width: 6px;
     height: 6px;
@@ -108,8 +132,8 @@ body {
 }
 
 .role-period {
-    font-size: 16px;
-    color: #666;
+    font-size: 18px;
+    color: #000;
     display: flex;
     flex-direction: column;
     gap: 4px;
@@ -120,7 +144,8 @@ body {
 }
 
 .period {
-    color: #888;
+    color: #000;
+    font-weight: 400;
 }
 
 .company-projects {
@@ -133,7 +158,7 @@ body {
 }
 
 .project-name {
-    font-size: 20px;
+    font-size: 22px;
     font-weight: 700;
     margin-bottom: 8px;
     position: relative;
@@ -153,9 +178,42 @@ body {
     border-radius: 50%;
 }
 
+.project-title-link {
+    color: #000;
+    text-decoration: none;
+    border-bottom: 1px solid transparent;
+    transition: all 0.2s;
+    display: inline;
+}
+
+.project-title-link:hover {
+    border-bottom-color: #4285f4;
+    color: #4285f4;
+}
+
+.project-name:has(.project-title-link)::after {
+    display: none;
+}
+
+.project-title-link::after {
+    content: ' ↗';
+    display: inline;
+    font-size: 30px;
+    color: #4285f4;
+    opacity: 0.7;
+    transition: opacity 0.2s;
+    vertical-align: -0.1em;
+    margin-left: 2px;
+}
+
+.project-title-link:hover::after {
+    opacity: 1;
+}
+
 .project-period {
-    font-size: 14px;
-    color: #888;
+    font-size: 16px;
+    color: #000;
+    font-weight: 400;
     margin-bottom: 16px;
 }
 
@@ -164,23 +222,25 @@ body {
 }
 
 .detail-title {
-    font-size: 16px;
+    font-size: 18px;
     font-weight: 600;
     margin-bottom: 8px;
-    color: #333;
+    color: #000;
 }
 
 .detail-content {
-    font-size: 17px;
+    font-size: 19px;
     line-height: 1.8;
-    color: #555;
+    color: #000;
+    font-weight: 400;
     margin-left: 20px;
 }
 
 .detail-list {
-    font-size: 17px;
+    font-size: 19px;
     line-height: 1.9;
-    color: #555;
+    color: #000;
+    font-weight: 400;
     margin-left: 40px;
     list-style-type: disc;
 }
@@ -190,7 +250,7 @@ body {
 }
 
 .detail-list li::marker {
-    color: #1f3b7b;
+    color: #1e40af;
 }
 
 /* 기타 경험 */
@@ -199,7 +259,7 @@ body {
 }
 
 .experience-name {
-    font-size: 20px;
+    font-size: 22px;
     font-weight: 700;
     margin-bottom: 8px;
     position: relative;
@@ -220,11 +280,58 @@ body {
 }
 
 .experience-description {
-    font-size: 15px;
-    line-height: 1.7;
-    color: #555;
-    margin-left: 20px;
+    font-size: 19px;
+    line-height: 1.9;
+    color: #000;
+    font-weight: 400;
+    margin-left: 40px;
     margin-top: 8px;
+    list-style-type: disc;
+}
+
+.experience-description li {
+    margin-bottom: 4px;
+}
+
+.experience-description li::marker {
+    color: #1e40af;
+}
+
+.experience-description a {
+    color: #4285f4;
+    text-decoration: none;
+    transition: color 0.2s;
+}
+
+.experience-description a:hover {
+    color: #1a73e8;
+    text-decoration: underline;
+}
+
+.project-links {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    flex-wrap: wrap;
+}
+
+.project-link {
+    color: #4285f4;
+    text-decoration: none;
+    font-weight: 500;
+    transition: all 0.2s;
+    padding: 2px 0;
+    border-bottom: 1px solid transparent;
+}
+
+.project-link:hover {
+    color: #1a73e8;
+    border-bottom-color: #1a73e8;
+}
+
+.link-divider {
+    color: #ccc;
+    font-weight: 300;
 }
 
 /* 스킬 */
@@ -233,7 +340,7 @@ body {
 }
 
 .skill-category-title {
-    font-size: 20px;
+    font-size: 22px;
     font-weight: 700;
     margin-bottom: 12px;
     position: relative;
@@ -254,15 +361,20 @@ body {
 }
 
 .skill-list {
-    font-size: 15px;
+    font-size: 19px;
     line-height: 1.8;
-    color: #555;
+    color: #000;
+    font-weight: 400;
     margin-left: 20px;
     list-style-type: disc;
 }
 
 .skill-list li {
     margin-bottom: 4px;
+}
+
+.skill-list li::marker {
+    color: #1e40af;
 }
 
 /* 연락처 */
@@ -276,7 +388,7 @@ body {
 }
 
 .contact-list a {
-    font-size: 15px;
+    font-size: 19px;
     color: #4285f4;
     text-decoration: none;
     transition: color 0.2s;
@@ -294,18 +406,18 @@ body {
     }
 
     .greeting {
-        font-size: 36px;
+        font-size: 40px;
     }
 
     .section-title {
-        font-size: 28px;
+        font-size: 32px;
     }
 
     .company-name,
     .project-name,
     .experience-name,
     .skill-category-title {
-        font-size: 18px;
+        font-size: 20px;
     }
 
     .company-wrapper {
